@@ -2,6 +2,12 @@
 
 1. What is .NET? Why is it called an environment?
 
+
+
+
+
+
+
 .NET is a framework developed by Microsoft for building applications. It is called an "environment" because it provides tools, libraries, and runtime support for application development across different platforms.
 
 
