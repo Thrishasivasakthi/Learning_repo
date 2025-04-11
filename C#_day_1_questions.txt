@@ -1,0 +1,783 @@
+
+
+1. What is .NET? Why is it called an environment?
+
+.NET is a framework developed by Microsoft for building applications. It is called an "environment" because it provides tools, libraries, and runtime support for application development across different platforms.
+
+
+
+2. What are the two different versions of .NET, and what is the difference?
+
+The main versions are .NET Framework and .NET Core (now .NET 5+).
+
+.NET Framework is Windows-specific, while .NET Core/.NET 5+ is cross-platform.
+
+
+
+3. What are the two main components present in .NET?
+
+Common Language Runtime (CLR) – Executes code and manages memory.
+
+.NET Class Library – Provides pre-built functionalities for developers.
+
+
+
+4. all other components?
+
+msil,cil,cls,cts
+
+
+5. What is meant by a class library?
+
+A class library is a collection of reusable classes and methods that developers can use to simplify coding.
+
+
+
+6. What is meant by a namespace?
+
+A namespace is a way to group related classes and avoid naming conflicts in large projects.
+
+
+
+7. Syntax to declare a variable?
+
+datatype variableName = value;
+
+Example: int age = 25;
+
+
+
+8. What is the use of specifying a data type?
+
+It tells the compiler how much memory to allocate and what kind of data the variable will store.
+
+
+
+9. Different types of data types – list all the data types
+
+Value types: int, float, double, char, bool, etc.
+
+Reference types: string, arrays, classes, objects.
+
+
+what is managed code and unmanaged code?
+
+
+
+
+10. How is C# source code converted into machine code?
+
+
+
+C# code → Compiled into Intermediate Language (IL) → CLR converts IL into machine code using Just-In-Time (JIT) compilation
+
+********************************************************************************************************************************************************************************************
+
+
+
+1. What is an implicitly typed variable?
+
+=>It is declared using the var keyword, where the compiler determines the data type at compile-time based on the assigned value. 
+=>It must be initialized at declaration.
+=>var age = 35;
+
+
+2. Does C# support switch statements? If yes, justify it with an example. Mention the datatype it cannot support.
+
+
+Yes ,c# supports switch statement
+=>it doesn't support float decimal double
+
+int menu = 2;
+
+switch(menu)
+{
+case 1: Console.WriteLine("Addition"); break;
+case 2: Console.WriteLine("Multiplication"); break;
+case 3: Console.WriteLine("Division"); break;
+default: Console.WriteLine("Invalid menu"); break;
+}
+
+
+3. What is meant by an Array?
+
+=>An array is a fixed-size collection of elements of the same data type
+=> stored in contiguous memory locations.
+=>It allows efficient access via indices (starting from 0).
+=>int[] numberArray = {1,2,3}
+
+
+4. Types of Arrays in C# ?
+
+1. Single-Dimensional Array
+Simplest form of an array with one row of elements.
+
+Syntax:
+int[] numbers = new int[5];  // Fixed size (5 elements)
+
+int[] nums = { 1, 2, 3 };    // Initialized with values
+
+2. Multi-Dimensional Array
+Rectangular Array (2D, 3D, etc.)
+
+Fixed rows and columns (like a table).
+int[,] matrix = new int[2, 3];
+
+Jagged Array (Array of Arrays)
+
+Each row can have a different length.
+
+Syntax:
+int[][] jagged = new int[3][];  // 3 rows (each row is an array)
+jagged[0] = new int[2] { 1, 2 };  // Row 0 has 2 elements
+jagged[1] = new int[3] { 3, 4, 5 };  // Row 1 has 3 elements
+
+
+5. Types of Loops in C# 
+1. for Loop
+Syntax:
+for (initialization; condition; increment/decrement) 
+{ 
+    // Code to execute 
+}
+
+
+=> When the number of iterations is known (ex: looping through an array).
+for (int i = 0; i < 5; i++) 
+{
+    Console.WriteLine(i);  // Prints 0 to 4
+}
+
+2. while Loop
+Syntax:
+
+while (condition) 
+{ 
+    // Code to execute 
+}
+
+=> When the loop should run only if a condition is true (e.g., reading input until a valid entry is given).
+=> The condition is checked before entering the loop.(entry controlled loop)
+
+3. do-while Loop
+Syntax:
+
+do 
+{ 
+    // Code to execute 
+} while (condition);
+
+=>When the loop must execute at least once (e.g., menu-driven programs).
+
+=>The loop body runs first, then the condition is checked.
+
+4. foreach Loop
+Syntax:
+foreach (var item in collection) 
+{ 
+    // Code to execute 
+}
+
+=>When iterating over collections (arrays, lists, dictionaries) without modifying them.
+
+=>Simplifies traversal (no need for index management).
+
+
+6. List out all the operators in C#.
+
+
+Arithmetic: +, -, *, /, % (modulus), ++ (increment), -- (decrement).
+
+Relational: ==, !=, >, <, >=, <=.
+
+Logical: && (AND), || (OR), ! (NOT).
+
+Assignment: =, +=, -=, *=, /=.
+
+Bitwise: &, |, ^ (XOR), ~ (complement), << (left shift), >> (right shift).
+
+Conditional (Ternary): ?: (e.g., result = (a > b) ? a : b;).
+
+Null-coalescing: ?? (returns left operand if not null, else right).
+
+Type-checking: is (type check), as (safe type conversion).
+
+
+7. size of int testArray= new int[] {354,677,78,45,788};
+
+5
+
+8.no int testArray = new int[size]; or int[] testArray2 = new int[] {1, 2}; 
+
+9.string[] studentArray = new string[5];
+studentArray[0] = "John";
+What is the value of StudentArray[1]?
+ null--Default for unassigned string elements in an array.
+
+10.string[] fruits = {"Apple", "Banana", "Mango"}; is this correct way to declare an array?
+
+yes 
+
+11.Which class is base class for all classes?
+
+System.Object 
+=> provides basic methods
+=> every cls implicitly inherits from Object
+
+
+
+
+
+******************************************************************************************************************************************31/03/2025
+
+
+1. What is the difference between ref and out parameters in C#? When would you use each?
+
+
+
+=>ref requires the variable to be initialized before passing; out does not.
+
+=>Use ref to modify existing values.
+
+=>Use out to return multiple values from a method.
+
+
+
+2. Explain optional parameters in C#.
+
+
+=>Optional parameters have default values in method signatures.
+=>They allow callers to skip arguments during calls.
+=>Syntax: void MyMethod(int x = 10)
+
+
+3. What are named parameters in C#, and how can they improve code readability?
+
+=> it let you pass arguments using parameter names, not just order.
+
+=> Improves clarity, especially with optional or many params.
+Example:  SendEmail(body: "Hi", recipient: "a@b.com")
+
+
+4. Can you combine default parameters and out parameters in a method?
+
+=>Yes, but not directly on the same parameter.
+=>You can use default for inputs, and out for returning values.
+=>Combo boosts method flexibility
+
+
+5. Is it possible to skip middle optional parameters?
+
+=>Yes, but only by using named arguments.
+=>Skipping positionally leads to errors.
+Example: MyMethod(a:1, c:3) — skipping b.
+
+
+6. How do you call this method and print the result?
+
+void GetCoordinates(out int x, out int y) {
+    x = 100; y = 200;
+}
+
+int x, y;
+GetCoordinates(out x, out y);
+Console.WriteLine($"X: {x}, Y: {y}");
+
+
+7. Design CalculateSalary method as described.
+void CalculateSalary(int baseSalary, out int totalSalary, int bonus = 1000) {
+    totalSalary = baseSalary + bonus;
+}
+
+int salary;
+CalculateSalary(5000, out salary);
+Console.WriteLine(salary); // 6000
+
+
+8. Method to return area & perimeter:
+
+void GetRectangleInfo(int length, int breadth, out int area, out int perimeter) {
+    area = length * breadth;
+    perimeter = 2 * (length + breadth);
+}
+
+
+int a, p;
+GetRectangleInfo(5, 3, out a, out p);
+Console.WriteLine($"Area: {a}, Perimeter: {p}");
+
+
+9. Email method with optional & named params:
+void SendEmail(string recipient, string subject = "No Subject", string body = "No Body") {
+    Console.WriteLine($"To: {recipient}, Subject: {subject}, Body: {body}");
+}
+
+SendEmail("user@mail.com", body: "Hello!");
+
+
+10. User profile summary with default name & out status:
+
+void GetUserSummary(string name = "Guest", out string status) {
+    status = $"{name} profile generated.";
+}
+
+string summary;
+GetUserSummary(out summary);
+Console.WriteLine(summary); // "Guest profile generated."
+
+
+11. Named parameters to register user:
+void RegisterUser(string name, int age, string city) {
+    Console.WriteLine($"{name}, {age}, from {city}");
+}
+
+RegisterUser(city: "Mumbai", age: 22, name: "Ravi");
+
+
+12. Temperature converter with default & out status:
+void ConvertTemp(float celsius = 25, out string status) {
+    float fahrenheit = (celsius * 9 / 5) + 32;
+    status = $"Converted: {fahrenheit}°F";
+}
+
+
+string result;
+ConvertTemp(out result);
+Console.WriteLine(result);
+
+***************************************************************************************************************************************
+1/04/25
+What is Inheritance?
+
+
+Inheritance is an OOP concept that allows a child class to acquire properties and behavior from a parent class. It helps in code reusability and maintaining hierarchy.
+
+class Animal { public void Eat() { Console.WriteLine("Eating..."); } }
+class Dog : Animal { public void Bark() { Console.WriteLine("Barking..."); } }
+
+
+2. Types of Inheritance?
+
+Single → One parent, one child.
+
+Multilevel → Child inherits from another child.
+
+Hierarchical → Multiple children from a single parent.
+
+Multiple (via Interfaces) → Not directly supported but achieved using interfaces.
+
+
+3. Access Specifiers?
+
+They define the visibility of class members:
+
+public → Accessible anywhere
+
+private → Only inside the class
+
+protected → Accessible in derived classes
+
+internal → Accessible within same assembly
+
+protected internal → Combination of protected + internal
+
+private protected → Only in derived class of same assembly
+
+
+
+4. What is a Constructor?
+A special method in a class that initializes objects when created. It has the same name as the class and has no return type.
+
+
+5. Types of Constructor?
+Default Constructor → No parameters
+
+Parameterized Constructor → Accepts arguments
+
+Copy Constructor → Copies another object's values
+
+Static Constructor → Initializes static members
+
+Private Constructor → Restricts object creation
+
+
+6. How to Call a Constructor?
+When an object is created, the constructor is automatically called.
+
+class Car {  
+    public Car() { Console.WriteLine("Car Created!"); }  
+}
+Car obj = new Car();  // Calls constructor
+
+
+7. How does a Constructor Differ from a Method?
+Constructor → No return type, auto-called on object creation.
+
+Method → Has a return type, called explicitly.
+
+class Test {
+    public Test() { Console.WriteLine("Constructor Called!"); }  // Constructor
+    public void Display() { Console.WriteLine("Method Called!"); } // Method
+}
+
+
+8. What is a Copy Constructor?
+A constructor that copies values from one object to another.
+
+class Student {
+    public string Name;
+    public Student(Student obj) { this.Name = obj.Name; }
+}
+
+9. Constructor Overloading (Example)?
+Creating multiple constructors with different parameters.
+
+
+class Employee {
+    public Employee() { Console.WriteLine("Default Constructor"); }
+    public Employee(string name) { Console.WriteLine("Employee: " + name); }
+}
+Employee e1 = new Employee();  // Calls default constructor  
+Employee e2 = new Employee("John");  // Calls parameterized constructor  
+
+
+10. Does C# Support Multiple Inheritance?
+ No, but we can achieve it using interfaces.
+
+interface A { void Show(); }
+interface B { void Display(); }
+class C : A, B {  
+    public void Show() => Console.WriteLine("From A");  
+    public void Display() => Console.WriteLine("From B");  
+}
+
+11. Can Private Members be Inherited?
+ Yes, private members are inherited, but they are NOT accessible in the derived class.
+
+ The derived class does inherit the private member, but it cannot directly access it.
+ It is hidden from the child class.
+
+ Even though secretNumber is inherited, the Child class CANNOT use it directly.
+
+ How to access private members in the child class?
+ Solution: Use a public/protected method in the base class!
+
+12. Difference Between private, public, protected Members?
+private → Only inside the class
+
+public → Accessible anywhere
+
+protected → Accessible in derived classes
+
+13. Can Derived & Base Class Objects Access Protected Members Outside the Class?
+Only Derived Class can access, but outside objects cannot.
+ Accessing protected Members in Derived Class:
+Yes, a derived class CAN access protected members of the base class.
+ Can a Derived Class Object Access protected Members?
+ Yes, but only when accessed from within the derived class.
+
+ Can a Base Class Object Access protected Members?
+ No, a base class object CANNOT access protected members outside the class.
+
+14. What is a Static Method?
+A method that belongs to a class, not an object. It can be called without creating an object.
+
+class MathUtils {  
+    public static void Square(int num) { Console.WriteLine(num * num); }  
+}
+MathUtils.Square(5);  // Calls without an object
+
+
+
+15. Difference Between Static & Non-Static Methods?
+Static → Called using class name, can't use instance variables.
+
+Non-Static → Needs an object, can use instance variables.
+
+class Demo {
+    public static void StaticMethod() { Console.WriteLine("Static Method"); }
+    public void NonStaticMethod() { Console.WriteLine("Non-Static Method"); }
+}
+Demo.StaticMethod();  //  Works  
+// Demo.NonStaticMethod();  Error - needs an object  
+
+16. What is Value Type & Reference Type?
+Value Type → Stores data directly (int, char, bool, struct).
+
+Reference Type → Stores memory address (class, array, string).
+
+int a = 5;  // Value Type  
+string s = "Hello";  // Reference Type  
+
+
+16 .Can We Create a Private Constructor?
+Yes, we can create a private constructor in C#
+🔹 A private constructor prevents the direct instantiation of a class from outside.
+🔹 It is commonly used in Singleton Design Pattern or utility classes.
+
+class Singleton
+{
+    private static Singleton instance;
+    private Singleton() { }  // ✅ Private Constructor
+
+    public static Singleton GetInstance()
+    {
+        if (instance == null)
+            instance = new Singleton();
+        return instance;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Singleton obj = Singleton.GetInstance();
+    }
+}
+
+17.Constructor Execution Order
+You have a base class Employee and a derived class Manager. Both classes have constructors. The Employee constructor prints "Employee Created" and the Manager constructor prints "Manager Created".
+class Employee
+{
+    public Employee()
+    {
+        Console.WriteLine("Employee Created");
+    }
+}
+ 
+class Manager : Employee
+{
+    public Manager()
+    {
+        Console.WriteLine("Manager Created");
+    }
+}
+What will be the output when the following line is executed?
+Manager mgr = new Manager();
+What will happen if you make the Employee constructor private?
+ 
+How would you explicitly call a parameterized constructor of the base class from the derived clas Constructor Execution Order
+Scenario 1: What happens when we create an object of Manager?
+
+
+o/p
+Employee Created  
+Manager Created  
+
+ The base class constructor runs first, followed by the derived class constructor.
+Scenario 2: What if the Employee constructor is private?
+class Employee
+{
+    private Employee()  // ❌ Private Constructor
+    {
+        Console.WriteLine("Employee Created");
+    }
+}
+
+class Manager : Employee
+{
+    public Manager() 
+    {
+        Console.WriteLine("Manager Created");
+    }
+}
+ Error: "Manager cannot derive from Employee because Employee has no accessible constructor."
+➡ If a base class has a private constructor, it CANNOT be inherited.
+
+*****constructor must be public not be private in most cases 
+
+Scenario 3: How to Call a Parameterized Base Constructor?
+🔹 Use base() in the derived class constructor.
+
+
+class Employee
+{
+    public Employee(string name)
+    {
+        Console.WriteLine($"Employee {name} Created");
+    }
+}
+
+class Manager : Employee
+{
+    public Manager() : base("John")  // ✅ Explicitly calling base class constructor
+    {
+        Console.WriteLine("Manager Created");
+    }
+}
+Employee John Created  
+Manager Created  
+
+
+
+
+18.Consider the following classes:
+class Person
+{
+    public string Name = "Public Name";
+    private int age = 30;
+    protected string Gender = "Protected Gender";
+    internal string Nationality = "Internal Nationality";
+    protected internal string Status = "Protected Internal Status";
+    private protected string ID = "Private Protected ID";
+}
+ 
+class Student : Person
+{
+    public void ShowDetails()
+    {
+        Console.WriteLine(Name);              
+        // Console.WriteLine(age);          
+        Console.WriteLine(Gender);          
+        Console.WriteLine(Nationality);      
+        Console.WriteLine(Status);           
+        Console.WriteLine(ID);              
+    }
+}
+Which fields are accessible inside the Student class? Why are some inaccessible?
+ 
+ 
+What happens if Student is moved to a different assembly?
+ 
+How does changing private protected to protected affect access?
+
+
+
+class Person
+{
+    public string Name = "Public Name";
+    private int age = 30;
+    protected string Gender = "Protected Gender";
+    internal string Nationality = "Internal Nationality";
+    protected internal string Status = "Protected Internal Status";
+    private protected string ID = "Private Protected ID";
+}
+
+class Student : Person
+{
+    public void ShowDetails()
+    {
+        Console.WriteLine(Name);  // ✅ Accessible (public)
+        // Console.WriteLine(age);  // ❌ Error: Private members are NOT accessible
+        Console.WriteLine(Gender);  // ✅ Accessible (protected)
+        Console.WriteLine(Nationality);  // ✅ Accessible (internal)
+        Console.WriteLine(Status);  // ✅ Accessible (protected internal)
+        // Console.WriteLine(ID);  // ❌ Error: Private protected NOT accessible in derived class in different assembly
+    }
+}
+ Accessible Members in Student:
+
+Name → Public → Accessible everywhere.
+
+Gender → Protected → Accessible inside Student but NOT outside.
+
+Nationality → Internal → Accessible if Student is in the same assembly.
+
+Status → Protected Internal → Accessible since it is either protected or internal.
+
+❌ Inaccessible Members in Student:
+
+age → Private → Not inherited or accessible.
+
+ID → Private Protected → Not accessible in another assembly.
+
+
+
+Scenario 2: What if Student is in a different assembly?
+🔹 Internal members (Nationality) will NOT be accessible.
+🔹 Protected Internal members (Status) will be accessible only via inheritance.
+
+
+
+Scenario 3: What happens if private protected is changed to protected?
+🔹 Now ID will be accessible inside Student.
+
+
+
+
+
+19.You have a class Animal with a parameterized constructor and a class Dog that inherits from it:
+class Animal
+{
+    public Animal(string type)
+    {
+        Console.WriteLine($"Animal type: {type}");
+    }
+}
+ 
+class Dog : Animal
+{
+    public Dog() : base("Dog")
+    {
+        Console.WriteLine("Dog constructor");
+    }
+}
+What will be the output of the following?
+Dog d = new Dog();
+Can the base constructor be overloaded?
+ 
+What happens if you omit : base("Dog") in Dog class?
+
+
+class Animal
+{
+    public Animal(string type)
+    {
+        Console.WriteLine($"Animal type: {type}");
+    }
+}
+
+class Dog : Animal
+{
+    public Dog() : base("Dog")  // ✅ Calls base constructor with "Dog"
+    {
+        Console.WriteLine("Dog constructor");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Dog d = new Dog();
+    }
+}
+
+o/p
+Animal type: Dog  
+Dog constructor  
+
+Scenario 2: Can the Base Constructor Be Overloaded?
+✅ Yes, we can overload the base class constructor
+
+
+class Animal
+{
+    public Animal() { Console.WriteLine("Default Animal constructor"); }
+    public Animal(string type) { Console.WriteLine($"Animal type: {type}"); }
+}
+
+class Dog : Animal
+{
+    public Dog() : base("Dog")  // Calls parameterized constructor
+    {
+        Console.WriteLine("Dog constructor");
+    }
+}
+
+ Base class can have multiple constructors, and derived classes can choose which one to call using base().
+Scenario 3: What Happens If We Omit : base("Dog")?
+
+class Dog : Animal
+{
+    public Dog()  // No explicit base constructor call
+    {
+        Console.WriteLine("Dog constructor");
+    }
+}
+
+o/p
+Default Animal constructor  
+Dog constructor  
+If we omit : base("Dog"), the default constructor of Animal is called instead!
